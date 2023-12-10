@@ -63,7 +63,7 @@ int main(){
                     precodoproduto = produtos[i].preco;
                     printf("Quantos deseja comprar? ");
                     scanf("%d", &quantidadedeCompra);
-                    printf("Valor total da compra: R$%.2f\n", TotalCompra(quantidadedeCompra, precodoproduto));
+                    printf("Valor total da compra: R$%.2f\n", TotalCompra(quantidadedeCompra[i], precodoproduto));
                     
                 }
             }
