@@ -25,7 +25,7 @@ int main(){
     
     struct produto produtos[3];
     char resposta[500];
-    int i, quantidadedeCompra[3];
+    int i, quantidadedeCompra[3] = {0, 0 , 0};
     float precodoproduto;
     
     strcpy (produtos[0].nome, "arroz");
@@ -47,6 +47,7 @@ int main(){
     
     printf("Como deseja prosseguir? ");
     gets(resposta);
+    system("cls || clear");
     
     while(strcmp(resposta, "sair do prgrama") != 0 && strcmp(resposta, "3") != 0){
         
@@ -62,14 +63,21 @@ int main(){
                     printf("Preço do produto: R$%.2f\n", produtos[i].preco);
                     precodoproduto = produtos[i].preco;
                     printf("Quantos deseja comprar? ");
-                    scanf("%d", &quantidadedeCompra);
+                    scanf("%d", &quantidadedeCompra[i]);
                     printf("Valor total da compra: R$%.2f\n", TotalCompra(quantidadedeCompra[i], precodoproduto));
                     
                 }
             }
             
+            fflush(stdin);
+            getchar();
+            system("cls || clear");
+            printf("1 - Realizar uma compra\n");
+            printf("2 - Consultar estoque\n");
+            printf("3 - Sair do programa\n\n");
             printf("Como deseja prosseguir? ");
             gets(resposta);
+            system("cls || clear");
             
         }
         
@@ -81,8 +89,16 @@ int main(){
                 printf("Preço do produto: R$%.2f\n", produtos[i].preco);
                 printf("Quantidade em estoque: %d\n\n", EstoqueAtualizado(produtos[i].quantidade, quantidadedeCompra[i]));
             }
+
+            fflush(stdin);
             getchar();
-            strcpy(resposta, "3");
+            system("cls || clear");
+            printf("1 - Realizar uma compra\n");
+            printf("2 - Consultar estoque\n");
+            printf("3 - Sair do programa\n\n");
+            printf("Como deseja prosseguir? ");
+            gets(resposta);
+            system("cls || clear");
             
         }
         
